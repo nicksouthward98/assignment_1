@@ -20,7 +20,7 @@ int main() {
     printf("For decryption of a message encrypted with a rotation cipher press 2 \n");
     printf("For encryption of a message with a substitution cipher press 3 \n");
     printf("For decryption of a message encrypted with a substitution cipher press 4 \n");
-    printf("For decryption of a message encrypted with a rotation cipher press 5\n”);
+    printf("For decryption of a message encrypted with a rotation cipher press 5\n");
     scanf("%d", &choice); 
         
         switch (choice)	 //reads user input and runs appropriate task
@@ -131,7 +131,7 @@ void sCiphDecrypt(char *text1, char *textkey) {
                 if (c >= 'A' && c <= 'Z'){ 
                 
                     for(i2 = 0; i2 < 27; i2++){
-                        if(text1[i] == textkey[ix]) {
+                        if(text1[i] == textkey[i2]) {
                             break;
                         }
                     }
@@ -148,20 +148,20 @@ void rCiphDecryptText(char *text1, int key) {
     char c;
     int counter = 1;
         for(counter = 1; counter<= 26; counter++){
-	   for(i=0; text1[i] != ‘\0’; ++i) }
+	    for(i=0; text1[i] != '\0'; ++i) 
 		
 	       c = text1[i];
-		  key = 1;
+	       key = 1;
 			
-		      if(c>= ‘A’) {
-			c = c – key;
+		      if(c>= 'A') {
+		      c = c – key;
 
-		      if (c<’A’) {
-			 c = c + ‘Z’ – ‘A’ + 1;
+		      if (c<'A') {
+		          c = c + 'Z' – 'A' + 1;
             }
 	   		text1[i] = c;
         }
 				key++;
     
-printf("Message is: %s\nKey is: %d\n”, text1, counter);
+printf("Message is: %s\nKey is: %d\n”, text1, counter");
 }
