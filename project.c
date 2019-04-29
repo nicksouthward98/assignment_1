@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 
-// functions for first 4
+// functions for first 5
 void rCiphEncrypt(char *text1, int key);
 void rCiphDecrypt(char *text1, int key);
 void sCiphEncrypt(char *text1, char *textkey);
 void sCiphDecrypt(char *text1, char *textkey);
+void rCiphDecryptText(char *text1, int key);
 
 int main() { 
 
@@ -15,10 +16,11 @@ int main() {
     char text1[100];
     printf("Enter text here: \n");
     scanf("%[^\n]", text1);
-    printf("press 1 \n");
-    printf("Press 2 \n");
-    printf("Press 3 \n");
-    printf("press 4 \n");
+    printf("For encryption of a message with a rotation cipher press 1: \n");
+    printf("For decryption of a message encrypted with a rotation cipher press 2 \n");
+    printf("For encryption of a message with a substitution cipher press 3 \n");
+    printf("For decryption of a message encrypted with a substitution cipher press 4 \n");
+    printf("For decryption of a message encrypted with a rotation cipher press 5\n”);
     scanf("%d", &choice); 
         
         switch (choice)	 //reads user input and runs appropriate task
@@ -38,6 +40,10 @@ int main() {
             case 4:                         //4th case
                 sCiphDecrypt(text1, textkey);
                 break;
+
+	case 5:		//5th case
+	rCiphDecryptText(text1,  key);
+	break;
                 
             error:                        //if user does not enter number between 1 and 4
                 printf("Input must be between 1 and 4\n");
@@ -157,5 +163,5 @@ void rCiphDecryptText(char *text1, int key) {
         }
 				key++;
     
-printf(“Message is: %s\nKey is: %d\n”, text1, counter);
+printf("Message is: %s\nKey is: %d\n”, text1, counter);
 }
