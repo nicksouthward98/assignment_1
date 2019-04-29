@@ -22,42 +22,45 @@ int main() {
     printf("For decryption of a message encrypted with a substitution cipher press 4 \n");
 printf(“For decryption of a message encrypted with a rotation cipher press 5\n”);
     scanf("%d", &choice); 
-
-  if (choice = 1) {				//reads user input and runs appropriate task
-                      //1st case
-                rCiphEncrypt(text1, key);
+    
+    if (choice = 1) {		//1st case		
+                      
+     rCiphEncrypt(text1, key);
 }
-     else if (choice = 2)  {			//2nd case 
-                rCiphDecrypt(text1, key);
+    else if (choice = 2)  {	//2nd case 
+    
+      rCiphDecrypt(text1, key);
 }
                 
-            else if (choice = 3) {                       //3rd case 
+    else if (choice = 3) {      //3rd case 
 
-                sCiphEncrypt(text1, textkey);
-            }
+      sCiphEncrypt(text1, textkey);
+}
 	
-                
-            else if (choice = 4){                         //4th case
-                sCiphDecrypt(text1, textkey);
+    else if (choice = 4) {      //4th case
+        
+        sCiphDecrypt(text1, textkey);
 }
-	else if (choice = 5) {		//5th case
+    else if (choice = 5) {      //5th case
+	
 	rCiphDecryptText(text1,  key);
 }
                 
-          else {                        //if user does not enter number between 1 and 4
-                printf("Input must be between 1 and 4\n");
-                }
-                //end of if statement, appropriate function is called based on user input
+    else {           //if user does not enter number between 1 and 4
+        printf("Input must be between 1 and 4\n");
+}
+
+//end of if statement, appropriate function is called based on user input
           
  
 void rCiphEncrypt(char *text1, int key) {
     
-    int i;				 //iteration through the string
-    char c; 			//c is the character  
+    int i;	 //iteration through the string
+    char c; 	//c is the character  
     printf("Enter a key (from 1 to 25): \n");
     scanf("%d", &key);
     
-        for(i = 0; text1[i] != '\0' ; ++i) { 		//loop through the string
+        for(i = 0; text1[i] != '\0' ; ++i) { 	//loop through the string
             c = text1[i];
             
             if (c >= 'A' && c<= 'Z'){
@@ -71,7 +74,7 @@ void rCiphEncrypt(char *text1, int key) {
         }   
         printf("Encrypted message(rotation cipher): %s", text1);
 }			//end of rotation cipher function
-void rCiphDecrypt(char *text1, int key){  		//similar to above function minus key
+void rCiphDecrypt(char *text1, int key){  //similar to above function minus key
     
     int i;
     char c;
